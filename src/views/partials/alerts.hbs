@@ -1,0 +1,16 @@
+{{#if alerts}}
+    <div class="container fixed-top" style="margin-top: 80px;">
+        <div class="row">
+            <div class="col-md-12">
+                {{#each alerts}}
+                    <div class="alert alert-{{this.severity}} alert-dismissible fade show " role="alert">
+                        <strong>{{this.title}}</strong> {{this.description}}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+{{/if}}

@@ -1,0 +1,33 @@
+<section class="section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class=" col-lg-9   mb-5 mb-lg-0">
+                <article>
+                    <form class="card-body" method="POST" action="{{postUri}}">
+                        <input type="text" class="form-control" id="title" name="title" aria-describedby="tytuł" placeholder="Tytuł" value="{{notice.title}}">
+                        <ul class="card-meta my-3 list-inline">
+                            <li class="list-inline-item">
+                                <i class="ti-timer"></i> -
+                            </li>
+                            <li class="list-inline-item">
+                                <i class="ti-calendar"></i>{{toRelativeDate notice.date}}
+                            </li>
+                            <li class="list-inline-item">
+                                <i class="ti-eye"></i>{{notice.views}} wyświetleń
+                            </li>
+                        </ul>
+                        <div class="content">
+                            <textarea class="form-control" id="body" name="body" rows="25">{{notice.body}}</textarea>
+                        </div>
+                        <div class="mb-5 border-top mt-4 pt-5">
+                            <div class="alert alert-warning" role="alert">
+                                Twoje hasło edycji to "{{notice.editKey}}" zapisz je aby móc edytować to ogłoszenie w przyszlosci
+                            </div>
+                            <button type="submit" class="btn btn-primary">Zapisz</button>
+                        </div>
+                    </form>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>

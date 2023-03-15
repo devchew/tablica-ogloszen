@@ -1,0 +1,32 @@
+<section class="section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class=" col-lg-9   mb-5 mb-lg-0">
+                <article>
+                    <h1 class="h2">{{notice.title}}</h1>
+                    <ul class="card-meta my-3 list-inline">
+                        <li class="list-inline-item">
+                            <i class="ti-timer"></i>{{secondsToString notice.readTime}}
+                        </li>
+                        <li class="list-inline-item">
+                            <i class="ti-calendar"></i>{{toRelativeDate notice.date}}
+                        </li>
+                        <li class="list-inline-item">
+                            <i class="ti-eye"></i>{{notice.views}} wyświetleń
+                        </li>
+                    </ul>
+                    <div class="notice-content">{{notice.body}}</div>
+                    <div class="mb-5 border-top mt-4 pt-5">
+                        <form class="form-inline" method="get" action="{{editUri}}">
+                            <div class="form-group mx-sm-3 mb-2">
+                                <label for="key" class="p-2">Edytuj to ogłoszenie</label>
+                                <input type="password" class="form-control" id="key" placeholder="klucz" name="key">
+                            </div>
+                            <button type="submit" class="btn btn-primary mb-2">Edytuj</button>
+                        </form>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
