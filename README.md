@@ -58,3 +58,5 @@ interface Notice {
 ### screen shots
 
 ![home](docs/homepage.png)
+![create](docs/create.png)
+![single](docs/single.png)
