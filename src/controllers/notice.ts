@@ -40,6 +40,17 @@ router.post('/notice/:id/edit', async (req: Request, res: Response) => {
     if (!validate(req.params.id)) {
         return res.redirect('/');
     }
+    const notice = await getNotice(req.params.id);
+    if (req.body?.key !== notice.editKey) {
+        return res.redirect(`/notice/${notice.id}/?error=wrongKey`)
+    }
+    const alerts: string[] = [];
+    if (req.body?.title.trim() === '') {
+        alerts.push('missingTitle')
+    }
+    if (req.body?.body.trim() === '') {
+        alerts.push('missingBody')
+    }
 
     return updateNotice({
         id: req.params.id,
@@ -49,8 +60,15 @@ router.post('/notice/:id/edit', async (req: Request, res: Response) => {
             excerpt: createExcerpt(req.body.body),
             readTime: calculateReadTime(req.body.body)
         } : {}),
+        active: alerts.length === 0
     })
-        .then(() => res.redirect(`/notice/${req.params.id}/`))
+        .then(() => {
+            if (alerts.length) {
+                res.redirect(`/notice/${req.params.id}/edit?key=${req.body?.key}&error=${alerts.join('&error=')}`);
+                return;
+            }
+            res.redirect(`/notice/${req.params.id}/`);
+        })
         .catch(() => res.redirect('/'))
     }
 );
