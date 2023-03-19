@@ -11,13 +11,13 @@
                         <h3 class="mb-3"><a class="post-title" href="/notice/{{this.id}}">{{this.title}}</a></h3>
                         <ul class="card-meta list-inline">
                             <li class="list-inline-item">
-                                <i class="ti-timer"></i>{{secondsToString this.readTime}}
+                                <i class="ti-timer"></i><b>{{secondsToString this.readTime}}</b> czytania
                             </li>
                             <li class="list-inline-item">
-                                <i class="ti-calendar"></i>{{toRelativeDate this.date}}
+                                <i class="ti-calendar"></i><b>{{toRelativeDate this.date}}</b>
                             </li>
                             <li class="list-inline-item">
-                                <i class="ti-eye"></i>{{this.views}} wyświetleń
+                                <i class="ti-eye"></i><b>{{this.views}}</b> wyświetleń
                             </li>
                         </ul>
                         <p>{{this.excerpt}}</p>

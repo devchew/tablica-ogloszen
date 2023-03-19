@@ -8,13 +8,13 @@ const noticesAddress = '/notices';
 export const getAllNotices = (): Promise<Notice[]> => db
     .getObject<{[key: UUID]: Notice}>(noticesAddress)
     .then(notices => Object.values(notices))
-    .then(notices => notices.filter(({active}) => active));
+    .then(notices => notices.filter(({active}) => active).sort((a,b) => b.date - a.date));
 export const createNotice = (): Promise<Notice> => {
     const newNotice: Notice = {
         id: uuid(),
         date: +new Date(),
         editKey: keygen(),
-        active: true,
+        active: false,
         title: "",
         body: "",
         excerpt: "",

@@ -6,13 +6,13 @@
                     <h1 class="h2">{{notice.title}}</h1>
                     <ul class="card-meta my-3 list-inline">
                         <li class="list-inline-item">
-                            <i class="ti-timer"></i>{{secondsToString notice.readTime}}
+                            <i class="ti-timer"></i><b>{{secondsToString notice.readTime}}</b> czytania
                         </li>
                         <li class="list-inline-item">
-                            <i class="ti-calendar"></i>{{toRelativeDate notice.date}}
+                            <i class="ti-calendar"></i><b>{{toRelativeDate notice.date}}</b>
                         </li>
                         <li class="list-inline-item">
-                            <i class="ti-eye"></i>{{notice.views}} wyświetleń
+                            <i class="ti-eye"></i><b>{{notice.views}}</b> wyświetleń
                         </li>
                     </ul>
                     <div class="notice-content">{{notice.body}}</div>

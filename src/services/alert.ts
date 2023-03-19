@@ -7,7 +7,9 @@ export const createAlert = (title: Alert['title'] , description: Alert['descript
 })
 
 export const alerts: {[key: string]: Alert} = {
-    'wrongKey': createAlert('błędny klucz', 'brak dostępu', Severity.warning)
+    'wrongKey': createAlert('błędny klucz', 'brak dostępu', Severity.warning),
+    'missingTitle': createAlert('Uzupełnij tytuł', 'Nie możesz opublikować ogłoszenia bez tytułu', Severity.danger),
+    'missingBody': createAlert('Uzupełnij treść', 'Nie możesz opublikować ogłoszenia bez treści', Severity.danger),
 }
 
 export const parseAlerts = (query: string | string[]): Alert[] => {
