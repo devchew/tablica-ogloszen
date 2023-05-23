@@ -19,7 +19,8 @@ export const createNotice = (): Promise<Notice> => {
         body: "",
         excerpt: "",
         readTime: 0,
-        views: 0
+        views: 0,
+        likes: 0,
     }
     return db.push(`${noticesAddress}/${newNotice.id}`, newNotice).then(_=>newNotice);
 }
