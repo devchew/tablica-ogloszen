@@ -15,7 +15,7 @@
                             <i class="ti-eye"></i><b>{{notice.views}}</b> wyświetleń
                         </li>
                         <li class="list-inline-item">
-                            <button class="likes-button"><i class="ti-heart"></i><b>{{ notice.likes }}</b> polubień</button>
+                            <button class="btn btn-outline-primary btn-likes" onclick="fetch('/notice/{{ notice.id }}/like').then(()=>location.reload())"><b>{{ notice.likes }}</b> polubień</button>
                         </li>
                         
                     </ul>
