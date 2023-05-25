@@ -19,6 +19,9 @@
                             <li class="list-inline-item">
                                 <i class="ti-eye"></i><b>{{this.views}}</b> wyświetleń
                             </li>
+                            <li class="list-inline-item">
+                            <button class="btn btn-outline-primary btn-likes" onclick="fetch('/notice/{{ this.id }}/like').then(()=>location.reload())"><b>{{this.likes}}</b> polubień</button>
+                            </li>
                         </ul>
                         <p>{{this.excerpt}}</p>
                         <a href="/notice/{{this.id}}" class="btn btn-outline-primary">Zobacz</a>

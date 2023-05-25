@@ -10,4 +10,5 @@ export interface Notice {
     active: boolean
     views: number
     readTime: number
+    likes: number
 }

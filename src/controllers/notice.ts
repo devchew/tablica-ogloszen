@@ -17,6 +17,20 @@ const updateNoticeViews = (notice: Notice): Notice => ({...notice, views: notice
 
 const router = express.Router();
 
+router.get('/notice/:id/like', (req: Request, res: Response) => {
+  const id = req.params.id;
+
+  getNotice(id)
+    .then((notice) => {
+    updateNotice({ ...notice, likes: notice.likes + 1 });
+
+      return
+    })
+    .then((updatedNotice) => {
+      res.json(updatedNotice);
+    });
+});
+
 router.get('/notice/add', (req: Request, res: Response) => createNotice()
         .then(notice => res.redirect(`/notice/${notice.id}/edit?key=${notice.editKey}`))
         .catch(() => res.redirect('/')));
